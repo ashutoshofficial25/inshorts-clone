@@ -2,9 +2,11 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import NavInshorts from "./components/NavInshorts";
+import NewsCard from "./components/NewsCard/NewsCard";
+import NewsContent from "./components/NewsContent/NewsContent";
 
 function App() {
-  const [category, setCategory] = useState("general");
+  const [category, setCategory] = useState("business");
   const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState();
   const [loadmore, setLoadmore] = useState(20);
@@ -27,13 +29,16 @@ function App() {
   };
   useEffect(() => {
     newsApi();
-  }, []);
+  }, [newsResults, loadmore, category]);
 
   console.log("log:", newsArray);
   console.log("log:", newsResults);
   return (
-    <div className="App">
+    <div>
       <NavInshorts setCategory={setCategory} />
+      {newsArray.map((newsItem) => (
+        <NewsCard newsItem={newsItem} />
+      ))}
     </div>
   );
 }
