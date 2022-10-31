@@ -56,8 +56,7 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
   return (
     <div>
       <Button onClick={toggleDrawer("left", true)}>
-        <MenuIcon />
-        <p>Hello</p>
+        <MenuIcon fontSize="large" />
       </Button>
       <SwipeableDrawer
         anchor={"left"}

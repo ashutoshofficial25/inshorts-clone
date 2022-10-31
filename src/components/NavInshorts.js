@@ -2,7 +2,7 @@ import React from "react";
 import "./NavInshorts.css";
 import HumburgerDrawer from "./HumburgerDrawer";
 import { Button } from "@mui/material";
-import { Container } from "@mui/system";
+import logoInShorts from "../logo_inshorts.png";
 
 const NavInshorts = ({ setCategory }) => {
   return (
@@ -14,10 +14,10 @@ const NavInshorts = ({ setCategory }) => {
         />
 
         <img
-          src="../logo144.png"
+          src={logoInShorts}
           style={{ cursor: "pointer" }}
           alt="inshorts-logo"
-          height="50rem"
+          height="72px"
         />
         <Button>Login/signup</Button>
       </div>
