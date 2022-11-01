@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Card,
   CardContent,
   CardHeader,
@@ -27,10 +26,13 @@ const NewsCard = ({ newsItem }) => {
   const time = hour > 12 ? true : false;
 
   return (
-    <Card sx={{ display: "flex", marginBottom: "25px" }}>
+    <Card
+      elevation={8}
+      sx={{ display: "flex", marginBottom: "25px", padding: "10px" }}
+    >
       <CardMedia
         component="img"
-        sx={{ width: 151 }}
+        sx={{ width: 300 }}
         image={
           newsItem.urlToImage
             ? newsItem.urlToImage

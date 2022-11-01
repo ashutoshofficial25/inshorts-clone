@@ -44,7 +44,9 @@ export default function SwipeableTemporaryDrawer({ setCategory }) {
           <ListItem key={text} disablePadding>
             <ListItem>
               <ListItemButton>
-                <ListItemText>{text}</ListItemText>
+                <ListItemText onClick={() => setCategory(text)}>
+                  {text}
+                </ListItemText>
               </ListItemButton>
             </ListItem>
           </ListItem>

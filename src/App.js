@@ -6,10 +6,10 @@ import NewsCard from "./components/NewsCard/NewsCard";
 import NewsContent from "./components/NewsContent/NewsContent";
 
 function App() {
-  const [category, setCategory] = useState("business");
+  const [category, setCategory] = useState("general");
   const [newsArray, setNewsArray] = useState([]);
   const [newsResults, setNewsResults] = useState();
-  const [loadmore, setLoadmore] = useState(20);
+  const [loadmore, setLoadmore] = useState(15);
 
   const API_KEY = "a17bc6ce27b243eb9ab7b70a6cfd0298";
 
@@ -36,9 +36,11 @@ function App() {
   return (
     <div>
       <NavInshorts setCategory={setCategory} />
-      {newsArray.map((newsItem) => (
-        <NewsCard newsItem={newsItem} />
-      ))}
+      <NewsContent
+        newsArray={newsArray}
+        setLoadmore={setLoadmore}
+        loadmore={loadmore}
+      />
     </div>
   );
 }
